@@ -26,7 +26,7 @@ class SigninController {
                             vm.user = data;
                             //console.log(data);
                             if (vm.user.type === 'admin') {
-                                $state.go('profileadmin');
+                                $state.go('dashboard');
                             }
                             else if (vm.user.type === 'client') {
                                 $state.go('books');
@@ -35,7 +35,7 @@ class SigninController {
                         .error(function (e) {
                             console.log(e);
                         });
- 
+
 
                 });
         };

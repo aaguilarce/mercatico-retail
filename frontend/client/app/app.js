@@ -1,17 +1,8 @@
-// we don't need to use a variable
-// or the from keyword when importing a css/styl file
-// thanks the the styles loader it gets added as a
-// <style> tag in the head by default but can be changed
+'use strict';
+
 import 'normalize.css';
 import {appDirective} from './app.directive';
-// the angular libs are just common js
-// and therefore we can assume they were
-// exported using the default keyword in ES2015
-// so we can import each module
-// with any name we see fit.
-// Note that the actual value are just strings except angular itself
-// because that's how angular decided to export
-// their auxillary modules
+
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngAnimate from 'angular-animate';
@@ -29,8 +20,8 @@ import {footer} from './components/common/footer/footer';
 import {bookcard} from './components/common/bookcard/bookcard';
 
 //import admin components
-import {profileadmin} from './components/admin/profileadmin/profileadmin';
-import {createbook} from './components/admin/createbook/createbook';
+import {dashboard} from './components/admin/dashboard/dashboard';
+import {createProduct} from './components/admin/createProduct/createProduct';
 import {createlanguage} from './components/admin/createlanguage/createlanguage';
 import {booksadmin} from './components/admin/booksadmin/booksadmin';
 import {languagesadmin} from './components/admin/languagesadmin/languagesadmin';
@@ -48,13 +39,9 @@ import {bookcardadmin} from './components/common/bookcardadmin/bookcardadmin';
 import {viewbookadmin} from './components/admin/viewbookadmin/viewbookadmin';
 import {updatebookadmin} from './components/admin/updatebookadmin/updatebookadmin';
 import {usersadmin} from './components/admin/usersadmin/usersadmin';
+
 //Import factories
-import {authenticationFactory} from './shared/services/authentication.factory';
-import {booksFactory} from './shared/services/books.factory';
-import {categoriesFactory} from  './shared/services/categories.factory';
-import {languagesFactory} from  './shared/services/languages.factory';
-import {publishersFactory} from  './shared/services/publishers.factory';
-import {authorsFactory} from  './shared/services/authors.factory';
+import {shared} from './shared/shared';
 
 //import libraries
 import 'font-awesome/css/font-awesome.css';
@@ -65,18 +52,13 @@ import 'bootstrap-validator';
 angular.module('app', [
   uiRouter,
   ngAnimate,
-  // home is the module, the angular module
-  // because that's what we exported in home.js
-  // all angular modules have a name
-  // property who's value is the name you set the
-  // module to be
   home.name,
+  dashboard.name,
   contact.name,
   books.name,
   booksadmin.name,
   signin.name,
-  profileadmin.name,
-  createbook.name,
+  createProduct.name,
   createlanguage.name,
   createcategory.name,
   languagesadmin.name,
@@ -99,11 +81,6 @@ angular.module('app', [
   footer.name,
   bookcard.name,
   cart.name,
-  authenticationFactory.name,
-  booksFactory.name,
-  categoriesFactory.name,
-  languagesFactory.name,
-  publishersFactory.name,
-  authorsFactory.name
+  shared.name
 ])
 .directive('app', appDirective);

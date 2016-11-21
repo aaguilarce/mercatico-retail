@@ -13,9 +13,9 @@ const express		=require('express'),//No se pone el path porque esta en node_modu
 
 
 cloudinary.config({ 
-  cloud_name: 'dhbixxdig', 
-  api_key: '618131245418221', 
-  api_secret: '0LlpIWAjurKF1WPIfB_abehXrX4' 
+  cloud_name: 'dbcxvzrm6', 
+  api_key: '976273925376112', 
+  api_secret: '4AXf0HFxUnZm-WNGuZW_zp6vPs0' 
 });
 
 //log info to the console

@@ -9,11 +9,11 @@ function insertBook(req, res) {
             "message": "UnauthorizedError: private data"
         });
     } else {
-        cloudinary.uploader.upload(req.body.image_base64, function (result) {
+        cloudinary.uploader.upload(req.body.image64, function (result) {
             console.log(result.url);
             //save book
             var book = new books();
-            book.title = req.body.title;
+            book.name = req.body.name;
             book.authors = req.body.authors;
             book.published_date = req.body.published_date;
             book.price = req.body.price;
