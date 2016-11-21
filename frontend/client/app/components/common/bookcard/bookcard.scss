@@ -1,0 +1,13 @@
+.card-img{
+    height: 300px;
+    width: 300px;
+}
+
+.card a{
+    text-decoration: none;
+}
+
+.card:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}

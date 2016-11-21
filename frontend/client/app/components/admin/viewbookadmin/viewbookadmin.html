@@ -1,0 +1,41 @@
+<div>
+    <headeradmin></headeradmin>
+    <main>
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-offset-1 col-md-4 col-xs-6">
+                            <img class="img-responsive center-img img-padding" ng-src="{{ viewbook.currentbook.image_path}}" alt="{{ viewbook.currentbook.title}}">
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <h1 class="title">General Information</h1>
+                                </div>
+                                <div class="col-sm-2">
+                                    <a ng-click="viewbook.updatecard(viewbook.currentbook._id)"><i class="fa fa-pencil-square-o edit-button edit-button-padding" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="golden-color">Title: </h3>
+                            <p>{{ viewbook.currentbook.title }}</p>
+                            <h3 ng-show="viewbook.currentbook.best_seller">Best Seller!</h3>
+                            <h3 class="golden-color">Quantity: </h3>
+                            <p>{{viewbook.currentbook.quantity}} {{ viewbook.currentbook.state }} </p>
+                            <h3 class="golden-color">Authors: </h3>
+                            <p ng-repeat="author in viewbook.currentbook.authors">{{author}}</p>
+                            <h3 class="golden-color">Categories: </h3>
+                            <p ng-repeat="category in viewbook.currentbook.categories">{{category}}</p>
+                            <h3 class="golden-color">Languages: </h3>
+                            <p ng-repeat="language in viewbook.currentbook.languages">{{language}}</p>
+                            <h3 class="golden-color">Publisher: </h3>
+                            <p>{{ viewbook.currentbook.publisher }}</p>
+                            <h3 class="golden-color">Publisher Date: </h3>
+                            <p>{{ viewbook.currentbook.published_date | date:'dd-MMM-yyyy'}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

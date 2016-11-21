@@ -1,0 +1,152 @@
+<div>
+	<headeradmin></headeradmin>
+	<main>
+		<div id="wrapper">
+			<div id="page-wrapper">
+				<div class="container-fluid padding-top">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+							<div class="panel panel-login">
+								<div class="panel-heading">
+									<div class="row">
+										<div class="col-xs-12">
+											<a class="active">{{update.title}}</a>
+										</div>
+									</div>
+									<hr>
+								</div>
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-md-12">
+											<form  enctype="multipart/form-data" ng-submit="update.onSubmit()" role="form" style="display: block;" data-toggle="validator">
+												<div class="form-group">
+													<label for="title">Book tite</label>
+													<input type="text" class="form-control" id="title" placeholder="Book title" ng-model="update.book.title" data-error="Book title is required"
+														required>
+													<div class="help-block with-errors"></div>
+												</div>
+												<div class="form-group">   
+													<div class="row">
+														<div class="col-md-8 col-sm-6 col-xs-12">
+															<label for="image">Image</label>
+															<input type="file" class="form-control" id="image" name="image" placeholder="Image"  file-input="update.image">
+														</div>
+														<div class="col-md-4 col-sm-6 col-xs-12">
+															<img id="preview_image" ng-src="{{update.book.image_path}}" class="img-responsive center-block" />
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="author">Authors</label>
+													<select class="center-block" name="repeatSelect" id="repeatSelect" ng-model="update.book.authors" data-error="Authors are required"
+														multiple required>
+													<option value="">Please select a author(you can select multiple authors)</option> <!-- not selected / blank option -->
+													<option ng-repeat="option in update.authorsArray" ng-selected="update.book.authors == option.name" value="{{option.name}}">{{option.name}}</option>
+												</select>
+													<div class="help-block with-errors"></div>
+												</div>
+												<div class="form-group">
+													<label for="price">Price</label>
+													<input type="text" class="form-control" id="price" placeholder="Price" ng-model=" update.book.price" data-error="Price is required"
+														required>
+													<div class="help-block with-errors"></div>
+												</div>
+												<div class="form-group">
+													<label for="category">Category</label>
+													<select class="center-block" name="repeatSelect" id="repeatSelect" ng-model=" update.book.categories" data-error="Category is required"
+														required>
+													<option value="">Please select a category</option> <!-- not selected / blank option -->
+													<option ng-repeat="option in update.categoriesArray" ng-selected="update.book.categories == option.name" value="{{option.name}}">{{option.name}}</option>
+												</select>
+													<div class="help-block with-errors"></div>
+												</div>
+												<div class="form-group">
+													<label for="languages">Language</label>
+													<select class="center-block" name="repeatSelect" id="repeatSelect" ng-model=" update.book.languages" data-error="Language is required"
+														required>
+													<option value="">Please select a language</option> <!-- not selected / blank option -->
+													<option ng-repeat="option in update.languagesArray" ng-selected="update.book.languages == option.name"  value="{{option.name}}">{{option.name}}</option>
+												</select>
+													<div class="help-block with-errors"></div>
+												</div>
+												<div class="form-group">
+													<label for="publishedDate">Published Date</label>
+													<input type="date" class="form-control" id="published_date"  ng-model=" update.book.published_date"
+														data-error="Published date is required" required>
+													<div class="help-block with-errors"></div>
+												</div>
+												<div class="form-group">
+													<label for="publisher">Publisher</label>
+													<select class="center-block" name="repeatSelect" id="repeatSelect" ng-model=" update.book.publisher" data-error="Publisher is required"
+														required>
+													<option value="">Please select a publisher</option> <!-- not selected / blank option -->
+													<option ng-repeat="option in update.publishersArray" ng-selected="update.book.publisher == option.name" value="{{option.name}}">{{option.name}}</option>
+												</select>
+													<div class="help-block with-errors"></div>
+												</div>
+												<div class="form-group">
+													<label for="quantity">Quantity</label>
+													<input type="number" min="0" class="form-control" id="quantity" placeholder="1" ng-model="update.book.quantity" data-error="Quantity is required"
+														required>
+													<div class="help-block with-errors"></div>
+												</div>
+												<div class="form-group">
+													<div class="radio">
+														<label>
+														<input type="radio" name="state" ng-model="update.book.state" value="used" required>
+														Used book
+													</label>
+													</div>
+													<div class="radio">
+														<label>
+														<input type="radio" name="state" ng-model="update.book.state" value="new" required>
+														New book
+													</label>
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="checkbox">
+														<label>
+														<input type="checkbox" id="best_seller" ng-model="update.book.best_seller" >
+														Best Seller
+													</label>
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="row">
+														<div class="col-sm-6 col-sm-offset-3">
+															<input type="submit" name="submit" id="submit" class="form-control btn btn-register" value="Update Book">
+														</div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Message</h4>
+					</div>
+					<div class="modal-body">
+						<p>Your book has been created.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+</div>

@@ -1,0 +1,89 @@
+<div>
+	<appheader></appheader>
+	<main>
+		<div class="search-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<h1 class="search-wrapper-title">Whoever you are, find whatever you're into</h1>
+						<div class="input-group">
+						<input type="text" placeholder="What are you shopping for?" class="form-control" aria-label="...">
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{home.selectedItem}} <span class="caret"></span></button>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li ng-repeat="a in home.subjects"><a href="#" ng-click="home.dropboxitemselected(a)">{{a}}</a></li>
+							</ul>
+              <button type="button" class="btn btn-default">Search</button>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    <div class="about-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+                <h2>Our marketplace is a world of vintage and handmade goods</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                  natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                  eu, pretium quis, sem. Nulla consequat.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. nenatis vitae, justo. Nullam dictum felis eu pede mollis
+                  pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. </p>
+              </div>
+              <div class="col-xs-12 col-md-6">
+                <img class="img-responsive article-img" ng-src="http://wemadethis.typepad.com/.a/6a00d83451c2d869e2012876e247fe970c-500wi"
+                  alt="book store">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="reviews-title">Recent reviews from happy people</h2>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div>
+              <i class="fa fa-quote-left" aria-hidden="true"></i>
+              <p class="reviews-text">The gift tags are perfect! Can't wait to start wrapping presents!</p>
+            </div>
+            <div>
+              <img src="https://s15.postimg.org/534kj7lxn/image.png"/>
+              <a class="reviews-text" title="" href="#">Bennet Davincy Maria</a>
+              <i class="reviews-text">from Alajuela</i>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div>
+              <i class="fa fa-quote-left" aria-hidden="true"></i>
+              <p class="reviews-text">Beautiful. Well packaged and thorough instructions. fast shipping.</p>
+            </div>
+            <div>
+              <img src="https://s13.postimg.org/jxkpswutj/image.png"/>
+              <a class="reviews-text" title="" href="#">Rocky Manuel</a>
+              <i class="reviews-text">from Cartago</i>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div>
+              <i class="fa fa-quote-left" aria-hidden="true"></i>
+              <p class="reviews-text">Bigger than expected, but in a good way!</p>
+            </div>
+            <div>
+              <img src="https://s11.postimg.org/vguasop5v/image.png"/>
+              <a class="reviews-text" title="" href="#">Darwing Francisco</a>
+              <i class="reviews-text">from Heredia</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	</main>
+	<appfooter></appfooter>
+</div>

@@ -1,0 +1,12 @@
+// Bootstrap
+@import '~bootstrap-sass/assets/stylesheets/bootstrap-sprockets';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+// Custom general style
+@import 'variables';
+@import 'default';
+@import 'functions';
+@import 'fonts';
+@import 'typography';
+@import 'util';
+@import 'breakpoints';

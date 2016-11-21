@@ -1,0 +1,56 @@
+<header>
+  <nav class="navbar navbar-static-top fixed-position anav-bar" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed white-background" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="anav-bar-logo" href="#">Mercatico.</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-show="header.isLoggedIn"><a ui-sref="profileadmin" class="anav-bar-link" >Home</a></li>
+          <li ng-show="header.isLoggedIn"><a href="#" class="anav-bar-link" ng-click="header.logout()">Logout</a></li>
+        </ul>
+        <ul class="nav navbar-nav side-nav sidebar">
+          <li>
+            <a href="" data-toggle="collapse" data-target="#submenu-1" class="side-nav-item"> Products<i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="submenu-1" class="collapse side-nav-list">
+              <li><a href="" ui-sref="createbook" class="side-nav-item"> Create</a></li>
+              <li><a href="" ui-sref="booksadmin" class="side-nav-item"> View All</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="" data-toggle="collapse" data-target="#submenu-2" class="side-nav-item"> Sellers <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="submenu-2" class="collapse side-nav-list">
+              <li><a href="" ui-sref="createpublisher" class="side-nav-item"> Create</a></li>
+              <li><a href="" ui-sref="publishersadmin" class="side-nav-item"> View All</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="" data-toggle="collapse" data-target="#submenu-3" class="side-nav-item"> Attributes <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="submenu-3" class="collapse side-nav-list">
+              <li><a href="" ui-sref="createauthor" class="side-nav-item"> Create</a></li>
+              <li><a href="" ui-sref="authorsadmin" class="side-nav-item"> View All</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="" data-toggle="collapse" data-target="#submenu-4" class="side-nav-item"> Categories <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="submenu-4" class="collapse side-nav-list">
+              <li><a href="" ui-sref="createcategory" class="side-nav-item"> Create</a></li>
+              <li><a href="" ui-sref="categoriesadmin" class="side-nav-item"> View All</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="" data-toggle="collapse" data-target="#submenu-6" class="side-nav-item"> Users <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="submenu-6" class="collapse side-nav-list">
+              <li><a href="" ui-sref="usersadmin" class="side-nav-item"> View All</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div
+  </nav>
+</header>

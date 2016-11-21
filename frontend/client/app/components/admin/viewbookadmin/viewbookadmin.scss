@@ -1,0 +1,26 @@
+@import '../../../../styles/index';
+
+.btn-style{
+    font-family: 'Roboto','sans-serif';
+    background-color:$golden-color;
+    color:white;
+    text-transform: uppercase;
+}
+.uppercase{
+    text-transform: capitalize;
+}
+
+.img-padding{
+    padding-top:$padding;
+    padding-bottom:$padding;
+}   
+
+.edit-button-padding{
+    padding-top:50px;
+    color: $accent-color;
+}
+
+.edit-button:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}

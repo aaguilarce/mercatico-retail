@@ -1,0 +1,19 @@
+<div>
+    <headeradmin></headeradmin>
+    <main>
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="title">{{books.booksArray.length}} {{ books.title }}</h1>
+                        </div>
+                        <bookcard-item-admin ng-repeat="bookcard in books.booksArray  "
+                            bookcard="bookcard" openbookcard="books.openBookCard(bookcard._id)" removecard="books.removeBookCard(bookcard._id)"
+                            updatecard="books.updateBookCard(bookcard._id)"></bookcard-item-admin>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

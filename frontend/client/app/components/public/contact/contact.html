@@ -1,0 +1,38 @@
+<div>
+    <appheader></appheader>
+    <main>
+        <div class="border-line">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="title">{{ contact.title }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 padding-top">
+                    <form  class="form" role="form" action="https://formspree.io/melicaldosorno@gmail.com"    method="POST">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 form-group">
+                                <input class="form-control" id="name" name="name" placeholder="Name" type="text" required autofocus />
+                            </div>
+                            <div class="col-xs-6 col-md-6 form-group">
+                                <input class="form-control" id="email" name="_replyto" placeholder="Email" type="email" required />
+                            </div>
+                        </div>
+                        <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
+                        <br />
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12 form-group">
+                                <input type="submit" value="Send" class="btn btn-default pull-right btn-style">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <appfooter></appfooter>
+</div>

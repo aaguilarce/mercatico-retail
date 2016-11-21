@@ -1,0 +1,58 @@
+@import '../../../../styles/andres/main';
+
+.navbar {
+  margin-bottom: 0 !important;
+}
+
+.gnav-bar {
+  background-color: white !important;
+  border: 0;
+  border-bottom: 1px solid $color_lightgray !important;
+  border-top: 4px solid $color_primary !important;
+  margin: 0;
+}
+
+.gnav-bar-logo {
+  font-family: 'Arvo', serif !important;
+  font-size: 28px !important;
+  color: $color_darkgray !important;
+}
+
+.gnav-bar-link {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.gnav-bar-link-active {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #0192B5 !important;
+}
+
+.catnav-bar {
+  background-color: white !important;
+  border: 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid $color_lightgray !important;
+  margin: 0;
+}
+
+.catnav-bar-list {
+  list-style-type: disc;
+  padding: 0;
+  margin: 0;
+}
+
+.catnav-bar-link {
+  display: inline-block;
+  padding: 5px;
+}
+
+.catnav-bar-link:hover {
+  border-bottom: 3px solid $color_primary !important;
+  margin-bottom: -3px;
+}

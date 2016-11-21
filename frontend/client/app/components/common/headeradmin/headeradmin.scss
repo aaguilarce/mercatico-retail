@@ -1,0 +1,46 @@
+@import '../../../../styles/andres/main';
+
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
+  background-color: transparent !important;
+  color: #FF883E !important;
+}
+
+.navbar-nav > li > a:focus {
+  background-color: transparent !important;
+}
+
+.anav-bar {
+  background-color: white !important;
+  border: 0;
+  border-bottom: 1px solid $color_lightgray !important;
+  margin: 0;
+}
+
+.anav-bar-logo {
+  font-family: 'Arvo', serif !important;
+  font-size: 28px !important;
+  color: $color_darkgray !important;
+}
+
+.anav-bar-link {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.side-nav {
+  background-color: #2F363E;
+}
+
+.side-nav-list {
+  list-style: none;
+}
+
+.side-nav-item {
+  color: $color_lightgray !important;
+}
+
+.side-nav-item:hover {
+  color: #FF883E !important;
+}

@@ -1,0 +1,56 @@
+<div>
+    <appheader></appheader>
+    <main>
+        <div class="border-line">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="title">{{ books.title }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-line">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row  ">
+                            <div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3 ">
+                                <h2 class="padding-1">{{filterArray.length }} books</h2>
+                            </div>
+                            <div class="col-md-offset-1 col-md-2 col-xs-3 ">
+                                <div class="btn-group padding-2">
+                                    <button type="button" class="btn btn-default dropdown-toggle transparent-button" data-toggle="dropdown" aria-expanded="false">
+                                        <span ng-bind="books.filter">Filter by</span>&nbsp;<span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" dropdown-menu value="books.filter" role="menu">
+                                        <li><a ui-ref="books">All Books</a></li>
+                                        <li><a ui-ref="books">New Books</a></li>
+                                        <li><a ui-ref="books">Used Books</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12 col-sm-12 col-xs-12 padding-3">
+                    <form action="" class="search-form">
+                        <div class="form-group has-feedback">
+                            <label for="search" class="sr-only">Search</label>
+                            <input type="text" class="form-control" name="search" id="search" placeholder="Search by title, author,price, publisher,..."  ng-model="books.filterInput">
+                            <span class="glyphicon fa fa-search form-control-feedback"></span>
+                        </div>
+                    </form>
+                </div>
+                <bookcard-item ng-repeat="bookcard in books.booksArray  | filter: {state:  ( books.filter==='All Books' ? '' : (books.filter==='New Books'? 'new':'used' )) } | filter:books.filterInput as filterArray "
+                    bookcard="bookcard" openbookcard="books.openBookCard(bookcard._id)"></bookcard-item>
+            </div>
+        </div>
+    </main>
+    <appfooter></appfooter>
+</div>

@@ -1,0 +1,11 @@
+@import '../../../../styles/index';
+
+.btn-style{
+    font-family: 'Roboto','sans-serif';
+    background-color:$golden-color;
+    color:white;
+    text-transform: uppercase;
+}
+.uppercase{
+    text-transform: capitalize;
+}
