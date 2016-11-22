@@ -37,12 +37,13 @@ router.get('/api/profile', auth, profileCtrl.getprofile);
 router.post('/api/register', authCtrl.register);
 router.post('/api/login', authCtrl.login);
 router.get('/api/users', auth,authCtrl.getAllUsers);
+
 //books
-router.post('/api/books/new', auth, bookCtrl.insertBook);
-router.get('/api/books', bookCtrl.getAllBooks);
-router.get('/api/books/:_id', bookCtrl.getBook);
-router.delete('/api/books/:_id', auth,bookCtrl.deleteBook);
-router.put('/api/books/:_id', auth,bookCtrl.updateBook);
+router.post('/api/products', auth, bookCtrl.insertBook);
+router.get('/api/products', bookCtrl.getAllBooks);
+router.get('/api/products/:_id', bookCtrl.getBook);
+router.delete('/api/products/:_id', auth,bookCtrl.deleteBook);
+router.put('/api/products/:_id', auth,bookCtrl.updateBook);
 
 //Book Publisher
 router.post('/api/bookpublishers/new', auth, bookPublisherCtrl.insertBookPublishers);

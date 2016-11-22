@@ -14,16 +14,13 @@ function insertBook(req, res) {
             //save book
             var book = new books();
             book.name = req.body.name;
-            book.authors = req.body.authors;
-            book.published_date = req.body.published_date;
+            book.description = req.body.description;
             book.price = req.body.price;
-            book.categories = req.body.categories;
-            book.state = req.body.state;
-            book.best_seller = req.body.best_seller;
-            book.image_path = result.url;//url of the image
-            book.languages = req.body.languages;
-            book.publisher = req.body.publisher;
+            book.published_date = req.body.published_date;
+            book.seller = req.body.seller;
+            book.image64 = req.body.image64;
             book.quantity = req.body.quantity;
+            
             book.save({ book }, function (err, book) {
                 if (err) {
                     console.log(err);

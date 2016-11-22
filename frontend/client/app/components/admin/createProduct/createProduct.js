@@ -1,7 +1,6 @@
 'use strict';
 
 import {createProductDirective} from './createProduct.directive';
-
 import angular from 'angular';
 
 export const createProduct = angular.module('createProduct', [])

@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 
 class DashboardController {
+
   constructor($state, Authentication, $rootScope) {
     var vm = this;
 

@@ -1,7 +1,7 @@
 'use strict';
 
 import './createProduct.scss';
-import { CreateProductController as controller } from './createProduct.controller';
+import {CreateProductController as controller} from './createProduct.controller';
 import template from './createProduct.html';
 
 export const createProductDirective = () => {

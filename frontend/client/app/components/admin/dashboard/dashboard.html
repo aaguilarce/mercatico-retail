@@ -1,5 +1,5 @@
 <main>
-  <nav class="navbar navbar-static-top fixed-position anav-bar">
+  <nav class="navbar navbar-fixed-top anav-bar" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -20,45 +20,45 @@
   </nav>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-3 col-md-2">
-        <ul class="nav navbar-nav side-nav side-nav">
+      <div class="col-md-2 asidebar">
+        <ul class="nav nav-sidebar">
           <li>
-            <a href="" data-toggle="collapse" data-target="#submenu-1" class="side-nav-item"> Products<i class="fa fa-fw fa-angle-down pull-right"></i></a>
-            <ul id="submenu-1" class="collapse side-nav-list">
-              <li><a href="" ui-sref="dashboard.create-product" class="side-nav-item"> Create</a></li>
-              <li><a href="" ui-sref="booksadmin" class="side-nav-item"> View All</a></li>
+            <a href="" data-toggle="collapse" data-target="#productsMenu" class="aside-nav-item">Products<i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="productsMenu" class="collapse aside-nav-list">
+              <li><a href="" ui-sref="dashboard.create-product" class="aside-nav-item">Create</a></li>
+              <li><a href="" ui-sref="dashboard.list-product" class="aside-nav-item">View All</a></li>
             </ul>
           </li>
           <li>
-            <a href="" data-toggle="collapse" data-target="#submenu-2" class="side-nav-item"> Sellers <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-            <ul id="submenu-2" class="collapse side-nav-list">
-              <li><a href="" ui-sref="createpublisher" class="side-nav-item"> Create</a></li>
-              <li><a href="" ui-sref="publishersadmin" class="side-nav-item"> View All</a></li>
+            <a href="" data-toggle="collapse" data-target="#sellersMenu" class="aside-nav-item">Sellers<i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="sellersMenu" class="collapse aside-nav-list">
+              <li><a href="" ui-sref="createpublisher" class="aside-nav-item">Create</a></li>
+              <li><a href="" ui-sref="publishersadmin" class="aside-nav-item">View All</a></li>
             </ul>
           </li>
           <li>
-            <a href="" data-toggle="collapse" data-target="#submenu-3" class="side-nav-item"> Attributes <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-            <ul id="submenu-3" class="collapse side-nav-list">
-              <li><a href="" ui-sref="createauthor" class="side-nav-item"> Create</a></li>
-              <li><a href="" ui-sref="authorsadmin" class="side-nav-item"> View All</a></li>
+            <a href="" data-toggle="collapse" data-target="#attributesMenu" class="aside-nav-item">Attributes<i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="attributesMenu" class="collapse aside-nav-list">
+              <li><a href="" ui-sref="createauthor" class="aside-nav-item">Create</a></li>
+              <li><a href="" ui-sref="authorsadmin" class="aside-nav-item">View All</a></li>
             </ul>
           </li>
           <li>
-            <a href="" data-toggle="collapse" data-target="#submenu-4" class="side-nav-item"> Categories <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-            <ul id="submenu-4" class="collapse side-nav-list">
-              <li><a href="" ui-sref="createcategory" class="side-nav-item"> Create</a></li>
-              <li><a href="" ui-sref="categoriesadmin" class="side-nav-item"> View All</a></li>
+            <a href="" data-toggle="collapse" data-target="#categoriesMenu" class="aside-nav-item">Categories<i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="categoriesMenu" class="collapse aside-nav-list">
+              <li><a href="" ui-sref="createcategory" class="aside-nav-item">Create</a></li>
+              <li><a href="" ui-sref="categoriesadmin" class="aside-nav-item">View All</a></li>
             </ul>
           </li>
           <li>
-            <a href="" data-toggle="collapse" data-target="#submenu-6" class="side-nav-item"> Users <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-            <ul id="submenu-6" class="collapse side-nav-list">
-              <li><a href="" ui-sref="usersadmin" class="side-nav-item"> View All</a></li>
+            <a href="" data-toggle="collapse" data-target="#usersMenu" class="aside-nav-item">Users<i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="usersMenu" class="collapse aside-nav-list">
+              <li><a href="" ui-sref="usersadmin" class="aside-nav-item">View All</a></li>
             </ul>
           </li>
         </ul>
       </div>
-      <div class="col-sm-9 col-md-10">
+      <div class="col-md-10">
         <div ui-view></div>
       </div>
     </div>

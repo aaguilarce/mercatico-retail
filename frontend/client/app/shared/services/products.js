@@ -29,7 +29,11 @@ const products = (Authentication, API, $http, $q) => {
       Authorization: 'Bearer ' + Authentication.getToken()
     };
 
-    return $http.post(`${API.url}/api/products`, product, headers).then((data) => {
+    return $http.post(`${API.url}/api/products`, product, {
+      headers: {
+        Authorization: 'Bearer ' + Authentication.getToken()
+      }
+    }).then((data) => {
       allProducts.push(product);
     });
   };

@@ -1,7 +1,6 @@
 'use strict';
 
 import {dashboardDirective} from './dashboard.directive';
-
 import angular from 'angular';
 
 export const dashboard = angular.module('dashboard', [])

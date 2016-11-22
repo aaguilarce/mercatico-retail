@@ -15,15 +15,16 @@ import {signin} from './components/public/signin/signin';
 import {viewbook} from './components/public/viewbook/viewbook';
 import {cart} from './components/public/cart/cart';
 import {header} from './components/common/header/header';
-import {headeradmin} from './components/common/headeradmin/headeradmin';
 import {footer} from './components/common/footer/footer';
 import {bookcard} from './components/common/bookcard/bookcard';
+
+import {cardProductAdmin} from './components/common/cardProductAdmin/cardProductAdmin';
 
 //import admin components
 import {dashboard} from './components/admin/dashboard/dashboard';
 import {createProduct} from './components/admin/createProduct/createProduct';
 import {createlanguage} from './components/admin/createlanguage/createlanguage';
-import {booksadmin} from './components/admin/booksadmin/booksadmin';
+import {listProduct} from './components/admin/listProduct/listProduct';
 import {languagesadmin} from './components/admin/languagesadmin/languagesadmin';
 import {updatelanguageadmin} from './components/admin/updatelanguageadmin/updatelanguageadmin';
 import {createcategory} from './components/admin/createcategory/createcategory';
@@ -56,7 +57,6 @@ angular.module('app', [
   dashboard.name,
   contact.name,
   books.name,
-  booksadmin.name,
   signin.name,
   createProduct.name,
   createlanguage.name,
@@ -77,10 +77,11 @@ angular.module('app', [
   usersadmin.name,
   viewbook.name,
   header.name,
-  headeradmin.name,
   footer.name,
   bookcard.name,
   cart.name,
-  shared.name
+  shared.name,
+  listProduct.name,
+  cardProductAdmin.name
 ])
 .directive('app', appDirective);

@@ -10,13 +10,13 @@ class CreateProductController {
     vm.imageRaw = '';
 
     vm.product = {
-        name: '',
-        description: '',
-        price: '',
-        published_date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(),
-        seller: '',
-        image64: '',
-        quantity: ''
+      name: '',
+      description: '',
+      price: '',
+      published_date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(),
+      seller: '',
+      image64: '',
+      quantity: ''
     };
 
     vm.onSubmit = function () {
@@ -33,4 +33,4 @@ class CreateProductController {
 
 CreateProductController.$inject = ['Products', 'Authentication','$state'];
 
-export { CreateProductController };
+export {CreateProductController};
