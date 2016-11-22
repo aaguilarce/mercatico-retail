@@ -25,6 +25,13 @@
 }
 
 @media(max-width: 768px) {
+  .admin-panel-btn {
+    padding: 10px !important;
+    margin-top: 0 !important;
+  }
+}
+
+@media(max-width: 768px) {
   .article-img {
     width: 200px;
     height: 200px;

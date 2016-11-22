@@ -1,26 +1,17 @@
-import _ from 'lodash';
-
+'use strict';
 
 class CreateCategoryController {
-    constructor( Categories, Authentication) {
-        var vm = this;
-        vm.title = 'Create Category';
+  constructor(Categories, Authentication) {
+    var vm = this;
 
-        vm.Categories = Categories;
-        vm.category={
-            name: ""
-        }
-        
+    vm.category = { name: '', description: '' }
 
-        vm.onSubmit = function () {
-            vm.Categories.insertCategories(vm.category,Authentication).then(function(resp){
-                    $("#myModal").modal();
-                });
-        };
-
-    }
-
-
+    vm.onSubmit = function () {
+      Categories.insertCategory(vm.category, Authentication).then((resp) => {
+        $("#dialogForm").modal();
+      });
+    };
+  }
 }
 
-export { CreateCategoryController };
+export {CreateCategoryController};

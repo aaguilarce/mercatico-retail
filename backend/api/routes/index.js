@@ -13,7 +13,7 @@ const todos         = require('../models/todo'),
      authors          =  require('../models/author'),
      authorsCtrl     = require('../controllers/author.ctrl'),
      categories          =  require('../models/category'),
-     categoriesCtrl     = require('../controllers/category.ctrl'),
+     categoryCtrl     = require('../controllers/category.ctrl'),
      languages          =  require('../models/language'),
      languagesCtrl     = require('../controllers/language.ctrl')
      config = require('../config/auth');
@@ -60,11 +60,11 @@ router.delete('/api/authors/:_id',auth,authorsCtrl.deleteAuthors);
 router.put('/api/authors/:_id', auth,authorsCtrl.updateAuthors);
 
 //Categories
-router.post('/api/categories/new', categoriesCtrl.insertCategories);
-router.get('/api/categories', categoriesCtrl.getAllCategories);
-router.get('/api/categories/:_id', auth,categoriesCtrl.getCategory);
-router.delete('/api/categories/:_id',auth,categoriesCtrl.deleteCategories);
-router.put('/api/categories/:_id', auth,categoriesCtrl.updateCategories);
+router.post('/api/categories', categoryCtrl.insertCategory);
+router.get('/api/categories', categoryCtrl.getAllCategories);
+router.get('/api/categories/:_id', auth,categoryCtrl.getCategory);
+router.delete('/api/categories/:_id',auth,categoryCtrl.deleteCategory);
+router.put('/api/categories/:_id', auth,categoryCtrl.updateCategory);
 
 //Languages
 router.post('/api/languages/new', auth, languagesCtrl.insertLanguages);

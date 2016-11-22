@@ -27,7 +27,7 @@ import {createlanguage} from './components/admin/createlanguage/createlanguage';
 import {listProduct} from './components/admin/listProduct/listProduct';
 import {languagesadmin} from './components/admin/languagesadmin/languagesadmin';
 import {updatelanguageadmin} from './components/admin/updatelanguageadmin/updatelanguageadmin';
-import {createcategory} from './components/admin/createcategory/createcategory';
+import {createCategory} from './components/admin/createCategory/createCategory';
 import {categoriesadmin} from './components/admin/categoriesadmin/categoriesadmin';
 import {updatecategoryadmin} from './components/admin/updatecategoryadmin/updatecategoryadmin';
 import {authorsadmin} from './components/admin/authorsadmin/authorsadmin';
@@ -60,7 +60,7 @@ angular.module('app', [
   signin.name,
   createProduct.name,
   createlanguage.name,
-  createcategory.name,
+  createCategory.name,
   languagesadmin.name,
   updatelanguageadmin.name,
   categoriesadmin.name,

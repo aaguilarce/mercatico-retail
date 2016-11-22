@@ -12,8 +12,8 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li ng-show="dashboard.isLoggedIn"><a ui-sref="dashboard" class="anav-bar-link" >Home</a></li>
-          <li ng-show="dashboard.isLoggedIn"><a href="#" class="anav-bar-link" ng-click="dashboard.logout()">Logout</a></li>
+          <li ng-show="dashboard.isLoggedIn"><a ui-sref="home" class="anav-bar-link">Store</a></li>
+          <li ng-show="dashboard.isLoggedIn"><a class="anav-bar-link" href="#" ng-click="dashboard.logout()">Logout</a></li>
         </ul>
       </div>
     </div>
@@ -32,8 +32,8 @@
           <li>
             <a href="" data-toggle="collapse" data-target="#sellersMenu" class="aside-nav-item">Sellers<i class="fa fa-fw fa-angle-down pull-right"></i></a>
             <ul id="sellersMenu" class="collapse aside-nav-list">
-              <li><a href="" ui-sref="createpublisher" class="aside-nav-item">Create</a></li>
-              <li><a href="" ui-sref="publishersadmin" class="aside-nav-item">View All</a></li>
+              <li><a href="" ui-sref="dashboard.create-category" class="aside-nav-item">Create</a></li>
+              <li><a href="" ui-sref="dashboard.list-category" class="aside-nav-item">View All</a></li>
             </ul>
           </li>
           <li>

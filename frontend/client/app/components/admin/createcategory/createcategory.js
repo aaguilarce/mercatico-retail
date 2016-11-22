@@ -1,13 +1,18 @@
+'use strict';
+
 import angular from 'angular';
-import {createcategoryDirective} from './createcategory.directive';
+import {createCategoryDirective} from './createCategory.directive';
 
-export const createcategory = angular.module('createcategory', [])
-.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/');
+export const createCategory = angular.module('createCategory', [])
+  .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
+    $urlRouterProvider.otherwise('/dashboard');
 
-  $stateProvider.state('createcategory', {
-    url: '/createcategory',
-    template: '<createcategory></createcategory>'
-  });
-})
-.directive('createcategory', createcategoryDirective);   
+    $stateProvider.state('dashboard.create-category', {
+      parent: 'dashboard',
+      url: '/create-category',
+      template: '<create-category></create-category>'
+    });
+
+    $locationProvider.html5Mode(true);
+  })
+.directive('createCategory', createCategoryDirective);

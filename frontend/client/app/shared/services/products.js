@@ -25,10 +25,6 @@ const products = (Authentication, API, $http, $q) => {
   };
 
   const insertProduct = (product) => {
-    const headers = {
-      Authorization: 'Bearer ' + Authentication.getToken()
-    };
-
     return $http.post(`${API.url}/api/products`, product, {
       headers: {
         Authorization: 'Bearer ' + Authentication.getToken()
@@ -81,9 +77,9 @@ const products = (Authentication, API, $http, $q) => {
     return deferred.promise;
   };
 
-  return { get, getOne, insertProduct, deleteProduct, updateProduct, getState, imgToBase64 };
+  return {get, getOne, insertProduct, deleteProduct, updateProduct, getState, imgToBase64};
 };
 
 products.$inject = ['Authentication', 'API', '$http', '$q'];
 
-export { products };
+export {products};

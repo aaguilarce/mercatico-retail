@@ -1,8 +1,7 @@
 'use strict';
 
 class CreateProductController {
-
-  constructor(Products, Authentication, $state) {
+  constructor(Products, Authentication) {
     var vm = this;
 
     let today = new Date();
@@ -31,6 +30,6 @@ class CreateProductController {
   }
 }
 
-CreateProductController.$inject = ['Products', 'Authentication','$state'];
+CreateProductController.$inject = ['Products', 'Authentication'];
 
 export {CreateProductController};

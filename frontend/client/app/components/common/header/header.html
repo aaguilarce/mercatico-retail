@@ -8,24 +8,24 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand gnav-bar-logo" href="#">Mercatico.</a>
+        <a class="navbar-brand gnav-bar-logo" ui-sref="home">Mercatico.</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li ng-hide="header.isLoggedIn">
-            <a ui-sref="signin" class="gnav-bar-link">Register / Login</a>
-            <shop-register></shop-register>
+          <li ng-if="header.currentUser.type == 'admin'">
+            <a href="#" ui-sref="dashboard" class="btn admin-panel-btn" target="_blank">Admin Panel</a>
           </li>
-          <li ng-show="header.isLoggedIn">
-            <a href="#" class="gnav-bar-link-active">Awww Yeah! Welcome back, {{header.currentUser.name}}</a>
-            <shop-register></shop-register>
+          <li ng-if="!header.isLoggedIn">
+            <a class="gnav-bar-link" href="#" ui-sref="signin">Register / Login</a>
+          </li>
+          <li ng-if="header.isLoggedIn">
+            <a class="gnav-bar-link-active" href="#">Awww Yeah! Welcome back, {{header.currentUser.name}}</a>
           </li>
           <li>
-            <a ui-sref="cart"class="gnav-bar-link"><i class="fa fa-shopping-bag" aria-hidden="true"></i>  Cart<span> (0)</span></a>
+            <a class="gnav-bar-link" href="#" ui-sref="cart"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Cart<span> (0)</span></a>
           </li>
-          <li ng-show="header.isLoggedIn">
-            <a href="#" class="gnav-bar-link" ng-click="header.logout()">Logout</a>
-            <shop-register></shop-register>
+          <li ng-if="header.isLoggedIn">
+            <a class="gnav-bar-link" href="#" ng-click="header.logout()">Logout</a>
           </li>
         </ul>
       </div>

@@ -1,17 +1,16 @@
-import './createcategory.scss';
-import { CreateCategoryController as controller } from './createcategory.controller';
-import template from './createcategory.html';
+'use strict';
 
-export const  createcategoryDirective = () => {
+import './createCategory.scss';
+import {CreateCategoryController as controller} from './createCategory.controller';
+import template from './createCategory.html';
+
+export const createCategoryDirective = () => {
   return {
     template,
     controller,
-    controllerAs: 'create',
+    controllerAs: 'createCategory',
     restrict: 'E',
     replace: true,
-    scope: {},
-    link: function (scope, element, attrs) {
-
-    }
+    scope: {}
   };
 };

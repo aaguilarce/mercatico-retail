@@ -1,12 +1,17 @@
-//todos model
-const mongoose	= require('mongoose'),
-	 Schema		= mongoose.Schema;
+'use strict';
 
-//Create schema for collection
+const mongoose = require('mongoose'),
+	      Schema = mongoose.Schema;
+
 var categorySchema = new Schema({
-	name: { type: String , required: true},
-}, {
-    versionKey: false //Remove __v parameter for the data inserted in the database 
+  name: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  }
 });
 
 const Category = mongoose.model('Category', categorySchema);
