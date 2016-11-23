@@ -35,11 +35,11 @@ const products = (Authentication, API, $http, $q) => {
   };
 
   const deleteProduct = (id) => {
-    const headers = {
-      Authorization: 'Bearer ' + Authentication.getToken()
-    };
-
-    return $http.delete(`${API.url}/api/products/${id}`, headers).then((data) => {
+    return $http.delete(`${API.url}/api/products/${id}`, {
+      headers: {
+        Authorization: 'Bearer ' + Authentication.getToken()
+      }
+    }).then((data) => {
       allProducts.forEach((obj, i) => {
         if (obj._id === id) {
           let removed = allProducts.splice(i, 1);
@@ -49,11 +49,11 @@ const products = (Authentication, API, $http, $q) => {
   };
 
   const updateProduct = (product) => {
-    const headers = {
-      Authorization: 'Bearer ' + Authentication.getToken()
-    };
-
-    return $http.put(`${API.url}/api/products/${product._id}`, product, headers);
+    return $http.put(`${API.url}/api/products/${product._id}`, product, {
+      headers: {
+        Authorization: 'Bearer ' + Authentication.getToken()
+      }
+    });
   };
 
   const getState = () => {

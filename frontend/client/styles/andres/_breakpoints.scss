@@ -24,6 +24,60 @@
   }
 }
 
+@media (max-width: 992px) {
+  .navbar-right {
+    float: left !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .search-wrapper {
+    height: 28px;
+  }
+}
+
+@media (max-width: 992px){
+  .article-img {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  .search-wrapper {
+    height: 340px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-header {
+    float: left;
+    padding-top: 15px;
+    text-align: center;
+    width: 100%;
+  }
+  .navbar-brand {
+    float: none;
+  }
+}
+
+@media(max-width: 768px) {
+  .reviews-wrapper {
+    text-align: center;
+  }
+}
+
+@media(max-width: 768px) {
+  .navbar-header {
+    float: none;
+    padding: 0;
+    text-align: none;
+  }
+  .navbar-brand {float:left;}
+}
+
+
+
 @media(max-width: 768px) {
   .admin-panel-btn {
     padding: 10px !important;

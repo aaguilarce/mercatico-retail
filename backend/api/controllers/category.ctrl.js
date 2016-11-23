@@ -24,7 +24,7 @@ module.exports.insertCategory = (req, res) => {
     category.name = req.body.name;
     category.description = req.body.description;
 
-    Category.save({ category }, (err, data) => {
+    category.save({ category }, (err, data) => {
       if (err) {
         res.status(404).json({ 'message': 'Not Found' });
       }

@@ -1,0 +1,36 @@
+<div class="form-wrapper">
+  <div class="panel panel-primary">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Total categories : {{listCategory.allCategories.length}}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table">
+            <thead class="thead-inverse">
+              <tr>
+                <th>#</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="category in listCategory.allCategories track by $index">
+                <td scope="row">{{$index +1}}</td>
+                <td>{{category.name}}</td>
+                <td>{{category.description}}</td>
+                <td>
+                  <a ng-click="listCategory.updateCategory(category._id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                  <a ng-click="listCategory.removeCategory(category._id)"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

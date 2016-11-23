@@ -12,10 +12,10 @@ const express		=require('express'),//No se pone el path porque esta en node_modu
 	  cloudinary = require('cloudinary');
 
 
-cloudinary.config({ 
-  cloud_name: 'dbcxvzrm6', 
-  api_key: '976273925376112', 
-  api_secret: '4AXf0HFxUnZm-WNGuZW_zp6vPs0' 
+cloudinary.config({
+  cloud_name: 'dbcxvzrm6',
+  api_key: '976273925376112',
+  api_secret: '4AXf0HFxUnZm-WNGuZW_zp6vPs0'
 });
 
 //log info to the console
@@ -40,12 +40,16 @@ app.all('*', (req, res, next) => {
 app.use(express.static(path.join(__dirname,'client')));
 
 //Body-parser
-// parse application/x-www-form-urlencoded 
-app.use(bodyParser.urlencoded({ extended: true }));
-// parse application/json 
-app.use(bodyParser.json()); 
+
+app.use(bodyParser.json({limit: '150mb'}));
+app.use(bodyParser.urlencoded({
+  limit: '150mb',
+  extended: true
+}));
+
+
 //mount router module on api/route
-app.use("/",routes);	
+app.use("/",routes);
 
 //Initialise Passport before using the route middleware
 app.use(passport.initialize());
@@ -65,7 +69,7 @@ require('./api/config/passport');
 
 
 //inicia el server
-app.listen(8080,function(err){
+app.listen(3000,function(err){
 	if(err) throw err;
-	console.log('Server started on port: '+8080);
+	console.log('Server started on port: ' + 3000);
 });

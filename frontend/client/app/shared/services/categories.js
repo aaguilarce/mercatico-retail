@@ -10,7 +10,7 @@ const categories = (Authentication, API, $http, $q) => {
     return $http.get(`${API.url}/api/categories`).then(resp => allCategories = resp.data);
   };
 
-  const getOne = (id,Authentication) => {
+  const getOne = (id, Authentication) => {
     const category = _.find(allCategories, { id });
 
     if (category) {
@@ -51,7 +51,7 @@ const categories = (Authentication, API, $http, $q) => {
     });
   };
 
-  const updateCategories = (category, Authentication) => {
+  const updateCategory = (category, Authentication) => {
     return $http.put(`${API.url}/api/categories/${category._id}`, { name: category.name }, {
       headers: {
         Authorization: 'Bearer ' + Authentication.getToken()

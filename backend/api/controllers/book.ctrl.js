@@ -32,8 +32,9 @@ module.exports.insertBook = (req, res) => {
       book.image64 = result.url;
       book.quantity = req.body.quantity;
 
-      Book.save({ book }, (err, book) => {
+      book.save({ book }, (err, data) => {
         if (err) {
+          console.log(err.message);
           res.status(404).json({ 'message': 'Not Found' });
         }
         else {

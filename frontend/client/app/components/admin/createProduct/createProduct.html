@@ -1,7 +1,7 @@
 <div class="form-wrapper">
   <div class="panel panel-primary">
     <div class="panel-heading">
-      <h2 class="panel-heading-text">Creating new product</h2>
+      <h2 class="panel-heading-text-form">Creating new product</h2>
     </div>
     <div class="panel-body">
       <form id="create-form" enctype="multipart/form-data" ng-submit="createProduct.onSubmit()" role="form" style="display: block;" data-toggle="validator">
@@ -28,6 +28,16 @@
           <label for="description">Description:</label>
           <textarea class="form-control" rows="10" id="description" placeholder="Description" ng-model="createProduct.product.description" data-error="Description is required"></textarea>
           <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="">Category:</label>
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle btn-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{createProduct.selectedItem}} <span class="caret"></span></button>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li ng-repeat="category in createProduct.categories"><a role="dropdown" ng-click="createProduct.dropboxItemSelected(category)">{{category.name}}</a></li>
+            </ul>
+          </div>
         </div>
 
         <div class="form-group">

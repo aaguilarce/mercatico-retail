@@ -7,14 +7,14 @@
 					<div class="col-md-5">
 						<h1 class="search-wrapper-title">Whoever you are, find whatever you're into</h1>
 						<div class="input-group">
-						<input type="text" placeholder="What are you shopping for?" class="form-control" aria-label="...">
-						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle btn-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{home.selectedItem}} <span class="caret"></span></button>
-							<ul class="dropdown-menu dropdown-menu-right">
-								<li ng-repeat="a in home.subjects"><a href="#" ng-click="home.dropboxitemselected(a)">{{a}}</a></li>
-							</ul>
-              <button type="button" class="btn btn-default btn-search">Search</button>
-						</div>
+              <input type="text" placeholder="What are you shopping for?" class="form-control" aria-label="...">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle btn-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{home.selectedItem}} <span class="caret"></span></button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li ng-repeat="category in home.categories"><a role="dropdown" ng-click="home.dropboxItemSelected(category)">{{category.name}}</a></li>
+                </ul>
+                <button type="button" class="btn btn-default btn-search">Search</button>
+              </div>
 						</div>
 					</div>
 				</div>

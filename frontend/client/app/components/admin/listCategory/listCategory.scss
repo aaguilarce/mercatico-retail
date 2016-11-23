@@ -1,0 +1,32 @@
+@import './../../../../styles/andres/main';
+
+.form-wrapper {
+  margin-top: 80px;
+}
+
+.panel {
+  border-radius: 0 !important;
+  border-color: #222 !important;
+}
+
+.panel-primary {
+  border-radius: 0 !important;
+  border-color: #222 !important;
+}
+
+.panel-heading {
+  background-color: #222 !important;
+  color: white !important;
+  text-align: center;
+  border-color: #222 !important;
+}
+
+.panel-heading-text-form {
+  color: white;
+  padding: 0;
+}
+
+.btn-form {
+  background-color: #FF883E !important;
+  color: white !important;
+}

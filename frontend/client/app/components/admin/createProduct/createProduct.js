@@ -4,7 +4,7 @@ import {createProductDirective} from './createProduct.directive';
 import angular from 'angular';
 
 export const createProduct = angular.module('createProduct', [])
-  .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
+  .config(($stateProvider, $urlRouterProvider) => {
     $urlRouterProvider.otherwise('/dashboard');
 
     $stateProvider.state('dashboard.create-product', {
@@ -12,7 +12,5 @@ export const createProduct = angular.module('createProduct', [])
       url: '/create-product',
       template: '<create-product></create-product>'
     });
-
-    $locationProvider.html5Mode(true);
 })
 .directive('createProduct', createProductDirective);

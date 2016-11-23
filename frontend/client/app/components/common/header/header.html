@@ -16,7 +16,7 @@
             <a href="#" ui-sref="dashboard" class="btn admin-panel-btn" target="_blank">Admin Panel</a>
           </li>
           <li ng-if="!header.isLoggedIn">
-            <a class="gnav-bar-link" href="#" ui-sref="signin">Register / Login</a>
+            <a class="gnav-bar-link" href="#" ui-sref="auth">Register / Login</a>
           </li>
           <li ng-if="header.isLoggedIn">
             <a class="gnav-bar-link-active" href="#">Awww Yeah! Welcome back, {{header.currentUser.name}}</a>
@@ -25,7 +25,7 @@
             <a class="gnav-bar-link" href="#" ui-sref="cart"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Cart<span> (0)</span></a>
           </li>
           <li ng-if="header.isLoggedIn">
-            <a class="gnav-bar-link" href="#" ng-click="header.logout()">Logout</a>
+            <a class="gnav-bar-link" ng-click="header.logout()">Logout</a>
           </li>
         </ul>
       </div>
@@ -34,11 +34,7 @@
   <div class="catnav-bar">
     <div class="container">
       <ul class="catnav-bar-list">
-        <li class="catnav-bar-link"><a href="#">aaaaaaa</a></li>
-        <li class="catnav-bar-link"><a href="#">aaaaaaa</a></li>
-        <li class="catnav-bar-link"><a href="#">aaaaaaa</a></li>
-        <li class="catnav-bar-link"><a href="#">aaaaaaa</a></li>
-        <li class="catnav-bar-link"><a href="#">aaaaaaa</a></li>
+        <li ng-repeat="category in header.categories" class="catnav-bar-link"><a href="#">{{category.name}}</a></li>
       </ul>
     </div>
   </div>

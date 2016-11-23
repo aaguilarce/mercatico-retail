@@ -9,9 +9,8 @@ import ngAnimate from 'angular-animate';
 
 //import components
 import {home} from './components/public/home/home';
-import {contact} from './components/public/contact/contact';
 import {books} from './components/public/books/books';
-import {signin} from './components/public/signin/signin';
+import {auth} from './components/public/auth/auth';
 import {viewbook} from './components/public/viewbook/viewbook';
 import {cart} from './components/public/cart/cart';
 import {header} from './components/common/header/header';
@@ -28,7 +27,7 @@ import {listProduct} from './components/admin/listProduct/listProduct';
 import {languagesadmin} from './components/admin/languagesadmin/languagesadmin';
 import {updatelanguageadmin} from './components/admin/updatelanguageadmin/updatelanguageadmin';
 import {createCategory} from './components/admin/createCategory/createCategory';
-import {categoriesadmin} from './components/admin/categoriesadmin/categoriesadmin';
+import {listCategory} from './components/admin/listCategory/listCategory';
 import {updatecategoryadmin} from './components/admin/updatecategoryadmin/updatecategoryadmin';
 import {authorsadmin} from './components/admin/authorsadmin/authorsadmin';
 import {updateauthoradmin} from './components/admin/updateauthoradmin/updateauthoradmin';
@@ -55,15 +54,14 @@ angular.module('app', [
   ngAnimate,
   home.name,
   dashboard.name,
-  contact.name,
   books.name,
-  signin.name,
+  auth.name,
   createProduct.name,
   createlanguage.name,
   createCategory.name,
   languagesadmin.name,
   updatelanguageadmin.name,
-  categoriesadmin.name,
+  listCategory.name,
   updatecategoryadmin.name,
   authorsadmin.name,
   updateauthoradmin.name,

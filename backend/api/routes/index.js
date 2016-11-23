@@ -60,11 +60,11 @@ router.delete('/api/authors/:_id',auth,authorsCtrl.deleteAuthors);
 router.put('/api/authors/:_id', auth,authorsCtrl.updateAuthors);
 
 //Categories
-router.post('/api/categories', categoryCtrl.insertCategory);
+router.post('/api/categories', auth, categoryCtrl.insertCategory);
 router.get('/api/categories', categoryCtrl.getAllCategories);
-router.get('/api/categories/:_id', auth,categoryCtrl.getCategory);
-router.delete('/api/categories/:_id',auth,categoryCtrl.deleteCategory);
-router.put('/api/categories/:_id', auth,categoryCtrl.updateCategory);
+router.get('/api/categories/:_id', auth, categoryCtrl.getCategory);
+router.delete('/api/categories/:_id',auth, categoryCtrl.deleteCategory);
+router.put('/api/categories/:_id', auth, categoryCtrl.updateCategory);
 
 //Languages
 router.post('/api/languages/new', auth, languagesCtrl.insertLanguages);

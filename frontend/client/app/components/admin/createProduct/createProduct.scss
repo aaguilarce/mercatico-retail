@@ -1,7 +1,7 @@
 @import './../../../../styles/andres/main';
 
 .form-wrapper {
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .panel {
@@ -18,9 +18,10 @@
   background-color: #222 !important;
   color: white !important;
   text-align: center;
+  border-color: #222 !important;
 }
 
-.panel-heading-text {
+.panel-heading-text-form {
   color: white;
   padding: 0;
 }

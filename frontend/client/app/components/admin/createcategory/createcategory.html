@@ -1,7 +1,7 @@
 <div class="form-wrapper">
   <div class="panel panel-primary">
     <div class="panel-heading">
-      <h2 class="panel-heading-text">Creating new category</h2>
+      <h2 class="panel-heading-text-form">Creating new category</h2>
     </div>
     <div class="panel-body">
       <form id="create-form" enctype="multipart/form-data" ng-submit="createCategory.onSubmit()" role="form" style="display: block;" data-toggle="validator">
@@ -17,6 +17,14 @@
           <label for="description">Description:</label>
           <textarea class="form-control" rows="10" id="description" placeholder="Description" ng-model="createCategory.category.description" data-error="Description is required"></textarea>
           <div class="help-block with-errors"></div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <input type="submit" name="submit" id="submit" class="form-control btn btn-form" value="Create Category">
+            </div>
+          </div>
         </div>
 
         <!-- Modal -->

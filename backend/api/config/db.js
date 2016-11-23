@@ -1,5 +1,5 @@
 const mongoose  =require('mongoose'),
-       dbURI    ='mongodb://localhost/Retail';
+       dbURI    ='mongodb://admin:admin@ds053774.mlab.com:53774/mercatico-retail';
 
 //Open database
 mongoose.connect(dbURI);//para conectarse a la base de datos con mongoose

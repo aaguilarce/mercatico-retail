@@ -1,9 +1,10 @@
-import _ from 'lodash';
-
+'use strict';
 
 class HomeController {
-	constructor() {
+	constructor(Categories, Authentication, $state) {
 		var vm = this;
+
+    vm.Categories = Categories;
 
     vm.banners = [
       'https://img1.etsystatic.com/site-assets/vesta-homepage-headers-v3/onata_224522131_2020x335.jpg',
@@ -16,13 +17,21 @@ class HomeController {
 
 		vm.imgURL = vm.banners[(Math.floor(Math.random() * 6) + 1) - 1];
 
-		vm.subjects = ['Math', 'Physics', 'Chemistry', 'Hindi', 'English'];
+		vm.categories = this.getCategories();
 		vm.selectedItem = 'All';
 
-		vm.dropboxitemselected = function (item) {
-			vm.selectedItem = item;
+		vm.dropboxItemSelected = (item) => {
+			vm.selectedItem = item.name;
 		}
 	};
+
+  getCategories() {
+	  this.Categories.get().then(() => {
+      this.categories = this.Categories.getState();
+    });
+  };
 }
+
+HomeController.$inject = ['Categories', 'Authentication','$state'];
 
 export {HomeController};
