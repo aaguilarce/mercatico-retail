@@ -8,16 +8,22 @@ class ListProductController {
     vm.Products = Products;
 
     vm.allProducts = this.getProducts();
+    vm.detailsProduct = {};
 
-    vm.openBookCard = function (id) {
-      $state.go('viewbookadmin', {bookId: id});
+    vm.detailproduct = (id) => {
+      this.Products.getOne(id, Authentication).then((resp) => {
+        vm.detailsProduct = resp;
+        $('#productDetail').modal();
+      });
     }
-    vm.updateBookCard= function(id){
-      $state.go('updatebookadmin', {bookId: id});
+
+    vm.editproduct = (id) => {
+      $state.go('dashboard.edit-product', { productId: id });
     }
-    vm.removeBookCard= function(id){
-      vm.Books.deleteBooks(id,Authentication);
-      vm.getBooks();
+
+    vm.removeproduct = (id) => {
+      vm.Products.deleteProduct(id, Authentication);
+      vm.getProducts();
     }
   }
 

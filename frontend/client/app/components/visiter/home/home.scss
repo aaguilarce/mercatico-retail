@@ -1,0 +1,48 @@
+@import '../../../../styles/andres/main';
+
+.search-wrapper {
+  height: 280px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.search-wrapper-title {
+  font-family: 'Roboto', serif !important;
+  font-size: 45px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  color: $color_darkgray !important;
+  text-align: left;
+  line-height: 62.4px;
+}
+
+.form-control {
+  height: 38px !important;
+}
+
+.btn-search {
+  background-color: #34A8C4 !important;
+  color: white !important;
+  height: 38px !important;
+}
+
+.about-wrapper {
+  margin-top: 40px;
+}
+
+.reviews-wrapper {
+  background-color: #FF883E;
+  color: white !important;
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.reviews-text {
+  color: white !important;
+  font-style: italic;
+}
+
+.reviews-title {
+  color: white !important;
+}

@@ -1,8 +1,8 @@
-import _ from 'lodash';
+'use strict';
 
 class DashboardController {
 
-  constructor($state, Authentication, $rootScope) {
+  constructor(Authentication, $state) {
     var vm = this;
 
     vm.isLoggedIn = Authentication.isLoggedIn();
@@ -14,4 +14,7 @@ class DashboardController {
     }
   }
 }
+
+DashboardController.$inject = ['Authentication', '$state'];
+
 export {DashboardController};

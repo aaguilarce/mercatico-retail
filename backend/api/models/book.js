@@ -8,10 +8,10 @@ var bookSchema = new Schema({
     type: String,
     required: true
 	},
-	description: [{
+	description: {
     type: String,
     required: true
-  }],
+  },
 	price: {
     type: String,
     required: true
@@ -20,10 +20,10 @@ var bookSchema = new Schema({
     type: String,
     require:true
   },
-	seller: [{
+	seller: {
     type: String,
     required: true
-  }],
+  },
 	image64: {
     type: String,
     required: true

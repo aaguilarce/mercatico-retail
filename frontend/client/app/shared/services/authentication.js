@@ -1,71 +1,74 @@
-import _ from 'lodash';
+'use strict';
 
-const authentication = ($http, API, $window) => {
+const authentication = (API, $http, $window) => {
 
-    let allUsers=[];
+  let allUsers = [];
 
-    const saveToken = function (token) {
-        $window.localStorage['authorization-token'] = token;
-    };
+  const saveToken = (token) => {
+    $window.localStorage['authorization-token'] = token;
+  };
 
-    const getToken = function () {
-        return $window.localStorage['authorization-token'];
-    };
+  const getToken = () => {
+    return $window.localStorage['authorization-token'];
+  };
 
-    const logout = function () {
-        $window.localStorage.removeItem('authorization-token');
-    };
+  const logout = () => {
+    $window.localStorage.removeItem('authorization-token');
+  };
 
-    const isLoggedIn = function () {
-        var token = getToken();
-        var payload;
+  const isLoggedIn = () => {
+    let token = getToken();
+    let payload;
 
-        if (token) {
-            payload = token.split('.')[1];
-            payload = $window.atob(payload);
-            payload = JSON.parse(payload);
+    if (token) {
+        payload = token.split('.')[1];
+        payload = $window.atob(payload);
+        payload = JSON.parse(payload);
 
-            return payload.exp > Date.now() / 1000;
-        } else {
-            return false;
-        }
-    };
+        return payload.exp > Date.now() / 1000;
+    }
+    else {
+        return false;
+    }
+  };
 
-    const currentUser = function () {
-        if (isLoggedIn()) {
-            var token = getToken();
-            var payload = token.split('.')[1];
-            payload = $window.atob(payload);
-            payload = JSON.parse(payload);
-            return {
-                email: payload.email,
-                name: payload.name,
-                type:payload.type
-            };
-        }
-    };
+  const currentUser = () => {
+    if (isLoggedIn()) {
+      let token = getToken();
+      let payload = token.split('.')[1];
 
-    const register = function (user) {
-        return $http.post(`${API.url}/api/register`, user).success(function (data) {
-            saveToken(data.token);
-        });
-    };
+      payload = $window.atob(payload);
+      payload = JSON.parse(payload);
 
-    const login = function (user) {
-        return $http.post(`${API.url}/api/login`, user).success(function (data) {
-            saveToken(data.token);
-        });
-    };
+      return {
+        email: payload.email,
+        name: payload.name,
+        type: payload.type
+      };
+    }
+  };
 
-    const getProfile = function () {
-      return $http.get(`${API.url}/api/profile`, {
-        headers: {
-          Authorization: 'Bearer '+ getToken()
-        }
-      });
-    };
+  const register = (user) => {
+    return $http.post(`${API.url}/api/register`, user).success((data) => {
+      saveToken(data.token);
+    });
+  };
 
-    const getUsers = (Authentication) => {
+  const login = (user) => {
+    return $http.post(`${API.url}/api/login`, user).success((data) => {
+      saveToken(data.token);
+    });
+  };
+
+  const getProfile = () => {
+    return $http.get(`${API.url}/api/profile`, {
+      headers: {
+        Authorization: 'Bearer '+ getToken()
+      }
+    });
+  };
+
+  const getUsers = (Authentication) => {
     return $http.get(`${API.url}/api/users`, {
       headers: {
         Authorization: 'Bearer ' + Authentication.getToken()
@@ -74,12 +77,12 @@ const authentication = ($http, API, $window) => {
   };
 
   const getState = () => {
-        return allUsers;
-    };
+    return allUsers;
+  };
 
-    return { saveToken, getToken, logout, isLoggedIn, currentUser, register, login, getProfile ,getUsers,getState};
+  return {saveToken, getToken, logout, isLoggedIn, currentUser, register, login, getProfile ,getUsers,getState};
 };
 
-authentication.$inject = ['$http', 'API','$window'];
+authentication.$inject = ['API', '$http','$window'];
 
-export { authentication };
+export {authentication};

@@ -7,11 +7,12 @@ class CreateProductController {
     let today = new Date();
 
     vm.Categories = Categories;
+    vm.Products = Products;
 
     vm.imageRaw = '';
 
     vm.categories = this.getCategories();
-    console.log(vm.categories);
+    //console.log(vm.categories);
 		//vm.selectedItem = vm.categories[0].name;
 
 		vm.dropboxItemSelected = (item) => {
@@ -29,9 +30,9 @@ class CreateProductController {
     };
 
     vm.onSubmit = function () {
-      Products.imgToBase64(vm.imageRaw).then((resp) => {
+      this.Products.imgToBase64(vm.imageRaw).then((resp) => {
         vm.product.image64 = resp;
-        Products.insertProduct(vm.product, Authentication).then((resp) => {
+        this.Products.insertProduct(vm.product, Authentication).then((resp) => {
           $('#dialogForm').on('hidden.bs.modal', function () {
             $state.go('dashboard.list-product');
           });

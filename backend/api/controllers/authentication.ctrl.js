@@ -7,8 +7,7 @@ function register (req, res){
 
     user.name = req.body.name;
     user.email = req.body.email;
-	user.type= req.body.type;
-	console.log(user);
+	  user.type= req.body.type;
     user.setPassword(req.body.password);
 
     user.save(function(err) {

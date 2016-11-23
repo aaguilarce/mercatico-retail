@@ -2,17 +2,16 @@
   <div class="row">
     <div class="col-md-12">
       <div class="card">
-        <span class="card-title">{{product.name}}</span>
+        <a href="" ng-click="detailproduct()" class="card-title">{{product.name}}</a>
         <div class="card-image">
-          <img class="img-responsive" src="{{product.image64}}">
+          <img class="img-responsive img-responsive-product" src="{{product.image64}}">
         </div>
         <div class="card-content">
-          <p>{{product.description}}</p>
-          <h4>Price: {{product.price}}</h4>
+          <h4>Price $: {{product.price}}</h4>
         </div>
         <div class="card-action">
-          <a href="#" ng-click="updatecard()">See/Edit</a>
-          <a href="#" ng-click="removecard()">Remove</a>
+          <a href="" ng-click="editproduct()">Edit</a>
+          <a href="" ng-click="removeproduct()">Remove</a>
         </div>
       </div>
     </div>

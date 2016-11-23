@@ -5,8 +5,31 @@
         <h1>Total products : {{listProduct.allProducts.length}}</h1>
       </div>
     </div>
-    <div class="row">
-      <card-product-admin class="col-md-4" ng-repeat="product in listProduct.allProducts" product="product" openbookcard="listProduct.openBookCard(product._id)" removecard="listProduct.removeBookCard(product._id)" updatecard="listProduct.updateBookCard(product._id)"></card-product-admin>
+    <div class="row list-wrapper">
+      <card-product-admin class="col-md-4" ng-repeat="product in listProduct.allProducts" product="product" detailProduct="listProduct.detailproduct(product._id)" removeProduct="listProduct.removeproduct(product._id)" editproduct="listProduct.editproduct(product._id)"></card-product-admin>
     </div>
   </div>
+
+  <!-- Modal -->
+    <div class="modal fade" id="productDetail" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h3 class="modal-title">Product detail: {{listProduct.detailsProduct.name}}</h3>
+          </div>
+          <div class="modal-body">
+            <img class="img-responsive" src="{{listProduct.detailsProduct.image64}}">
+            <h4>Description: {{listProduct.detailsProduct.description}}</h4>
+            <h4>Price $: {{listProduct.detailsProduct.price}}</h4>
+            <h4>Category: {{listProduct.detailsProduct.category}}</h4>
+            <h4>Seller: {{listProduct.detailsProduct.seller}}</h4>
+            <h4>Published Date: {{listProduct.detailsProduct.published_date}}</h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>

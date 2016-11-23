@@ -21,8 +21,12 @@
   background-color: white;
 }
 
-.card span.card-title {
-  font-size: 24px;
+.img-responsive-product {
+  margin: 0 auto;
+}
+
+.card a.card-title {
+  font-size: 20px;
   font-weight: 300;
 }
 
@@ -35,7 +39,6 @@
   border-radius: 2px 2px 0 0;
   background-clip: padding-box;
   position: relative;
-  z-index: 10000;
 }
 
 .card .card-image span.card-title {

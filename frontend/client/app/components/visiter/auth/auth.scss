@@ -1,0 +1,34 @@
+@import '../../../../styles/andres/main';
+
+.auth-wrapper {
+  margin-top: 50px;
+}
+
+.panel-form-auth {
+  border-radius: 3px 3px 0 0 !important;
+  border-width: 8px !important;
+  border-color: #FFBA91 !important;
+}
+
+.btn-form {
+  background-color: #FF883E !important;
+  color: white !important;
+}
+
+.active-tab {
+  color: #FF883E !important;
+}
+
+
+.panel-heading-form {
+  background-color: white !important;
+  border-bottom-color: white;
+}
+
+.panel-heading-text:hover {
+  color: #FF883E !important;
+}
+
+.alert {
+  margin-bottom: 0 !important;
+}

@@ -9,9 +9,9 @@ export const cardProductAdminDirective = () => {
     restrict: 'E',
     scope: {
       'product': '=',
-      'openbookcard': '&',
-      'updatecard':'&',
-      'removecard':"&"
+      'detailproduct': '&',
+      'editproduct':'&',
+      'removeproduct':"&"
     },
     replace: true
   };
