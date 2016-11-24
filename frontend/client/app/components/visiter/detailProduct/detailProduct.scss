@@ -1,0 +1,30 @@
+@import './../../../../styles/andres/main';
+
+.form-wrapper-detailProd {
+  margin-top: 40px;
+  margin-bottom: 20px !important;
+}
+
+.list-wrapper {
+  margin-top: 30px;
+}
+
+.panel-modal {
+  border-radius: 3px 3px 0 0 !important;
+  border-width: 8px !important;
+  border-color: $color_lightgray !important;
+}
+
+.modal-text-bold {
+  font-weight: bold;
+  display: inline;
+}
+
+.modal-text {
+  display: inline;
+}
+
+.column-border {
+  border: 1px solid $color_lightgray;
+  padding: 10px;
+}

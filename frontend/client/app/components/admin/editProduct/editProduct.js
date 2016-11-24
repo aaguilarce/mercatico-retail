@@ -1,7 +1,7 @@
 'use strict';
 
-import {editProductDirective} from './editProduct.directive';
 import angular from 'angular';
+import {editProductDirective} from './editProduct.directive';
 
 export const editProduct = angular.module('editProduct', [])
   .config(($stateProvider, $urlRouterProvider) => {

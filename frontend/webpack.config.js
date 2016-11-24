@@ -20,7 +20,7 @@ module.exports = {
       { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
       { test: /\.css/, loader: 'style!css' },
       { test: /\.js$/, loader: 'babel?stage=1', exclude: [/client\/lib/, /node_modules/, /\.spec\.js/] },
-      //For font-awesome 
+      //For font-awesome
       { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader" },
       { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader" },
       { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery' }
@@ -35,7 +35,9 @@ module.exports = {
         new ProvidePlugin({
             jQuery: 'jquery',
             $: 'jquery',
-            jquery: 'jquery'        
-        })
-    ],
+            jquery: 'jquery'
+        }),
+
+        //new webpack.optimize.UglifyJsPlugin({minimize: false})
+    ]
 };

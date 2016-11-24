@@ -1,0 +1,18 @@
+<div>
+	<appheader></appheader>
+  <div class="form-wrapper-search">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h4>{{searchResult.allProducts.length}} Results</h4>
+        </div>
+      </div>
+      <div class="row list-wrapper">
+        <card-product class="col-md-4" ng-repeat="product in searchResult.allProducts"
+        product="product" showproducts="searchResult.addcart(product._id)"
+        detailproduct="searchResult.detailproduct(product._id)"></card-product>
+      </div>
+    </div>
+  </div>
+  <appfooter></appfooter>
+</div>

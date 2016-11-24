@@ -1,9 +1,10 @@
-const mongoose  =require('mongoose'),
-       dbURI    ='mongodb://admin:admin@ds053774.mlab.com:53774/mercatico-retail';
+const mongoose = require('mongoose'),
+       dbURI   = 'mongodb://admin:admin@ds053774.mlab.com:53774/mercatico-retail';
 
-//Open database
-mongoose.connect(dbURI);//para conectarse a la base de datos con mongoose
+mongoose.connect(dbURI);
+
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
-mongoose.connection.on('connected', function() {
+
+mongoose.connection.on('connected',() => {
 	console.log("Mongoose is listening for connections at: "+dbURI);
 });

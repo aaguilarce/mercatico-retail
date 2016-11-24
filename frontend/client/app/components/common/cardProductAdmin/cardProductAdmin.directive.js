@@ -10,8 +10,9 @@ export const cardProductAdminDirective = () => {
     scope: {
       'product': '=',
       'detailproduct': '&',
-      'editproduct':'&',
-      'removeproduct':"&"
+      'editproduct': '&',
+      'removeproduct': '&',
+      'showproducts': '&'
     },
     replace: true
   };

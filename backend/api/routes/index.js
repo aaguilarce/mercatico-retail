@@ -1,76 +1,49 @@
-const todos         = require('../models/todo'),
-     express        = require('express'),
-     router         = express.Router(),
-     todosCtrl      = require('../controllers/todo.ctrl'),
-     users          =  require('../models/user'),
-     jwt            = require('express-jwt'),
-     profileCtrl     = require('../controllers/profile.ctrl'),
-     authCtrl        = require('../controllers/authentication.ctrl'),
-     books          =  require('../models/book'),
-     bookCtrl     = require('../controllers/book.ctrl'),
-     bookpublishers          =  require('../models/bookpublisher'),
-     bookPublisherCtrl     = require('../controllers/bookpublisher.ctrl'),
-     authors          =  require('../models/author'),
-     authorsCtrl     = require('../controllers/author.ctrl'),
-     categories          =  require('../models/category'),
-     categoryCtrl     = require('../controllers/category.ctrl'),
-     languages          =  require('../models/language'),
-     languagesCtrl     = require('../controllers/language.ctrl')
-     config = require('../config/auth');
+const express      = require('express'),
+      router       = express.Router(),
+      users        = require('../models/user'),
+      jwt          = require('express-jwt'),
+      profileCtrl  = require('../controllers/profile.ctrl'),
+      authCtrl     = require('../controllers/authentication.ctrl'),
+      Product      = require('../models/product'),
+      productCtrl  = require('../controllers/product.ctrl'),
+      Category     = require('../models/category'),
+      categoryCtrl = require('../controllers/category.ctrl'),
+      Seller       = require('../models/seller'),
+      sellerCtrl   = require('../controllers/seller.ctrl')
+      config       = require('../config/auth');
 
-var auth           = jwt({
-        secret: config.secret,
-        userProperty: 'payload'//default name is user
-    });
-// Get all Todo
-router.get('/todos', todosCtrl.getAllTodos);
-// Create new Todo
-router.post('/todos/new', todosCtrl.insertTodo);
+var auth = jwt({
+  secret: config.secret,
+  userProperty: 'payload'
+});
 
-// Delete a todo based on :_id
-router.delete('/todos/delete/:_id', todosCtrl.deleteTodo);
-
-// profile
+// Profile
 router.get('/api/profile', auth, profileCtrl.getprofile);
 
-// authentication
+// Authentication
 router.post('/api/register', authCtrl.register);
 router.post('/api/login', authCtrl.login);
-router.get('/api/users', auth,authCtrl.getAllUsers);
+router.get('/api/users', auth, authCtrl.getAllUsers);
 
-//books
-router.post('/api/products', auth, bookCtrl.insertBook);
-router.get('/api/products', bookCtrl.getAllBooks);
-router.get('/api/products/:_id', bookCtrl.getBook);
-router.delete('/api/products/:_id', auth,bookCtrl.deleteBook);
-router.put('/api/products/:_id', auth,bookCtrl.updateBook);
+// Products
+router.post('/api/products', auth, productCtrl.insertProduct);
+router.get('/api/products', productCtrl.getAllProducts);
+router.get('/api/products/:_id', productCtrl.getProduct);
+router.delete('/api/products/:_id', auth, productCtrl.deleteProduct);
+router.put('/api/products/:_id', auth, productCtrl.updateProduct);
 
-//Book Publisher
-router.post('/api/bookpublishers/new', auth, bookPublisherCtrl.insertBookPublishers);
-router.get('/api/bookpublishers', bookPublisherCtrl.getAllBookPublishers);
-router.get('/api/bookpublishers/:_id', auth,bookPublisherCtrl.getPublisher);
-router.delete('/api/bookpublishers/:_id',auth,bookPublisherCtrl.deleteBookPublishers);
-router.put('/api/bookpublishers/:_id', auth,bookPublisherCtrl.updateBookPublishers);
-
-//Authors
-router.post('/api/authors/new', auth, authorsCtrl.insertAuthors);
-router.get('/api/authors', authorsCtrl.getAllAuthors);
-router.get('/api/authors/:_id', auth,authorsCtrl.getAuthor);
-router.delete('/api/authors/:_id',auth,authorsCtrl.deleteAuthors);
-router.put('/api/authors/:_id', auth,authorsCtrl.updateAuthors);
-
-//Categories
+// Categories
 router.post('/api/categories', auth, categoryCtrl.insertCategory);
 router.get('/api/categories', categoryCtrl.getAllCategories);
 router.get('/api/categories/:_id', auth, categoryCtrl.getCategory);
 router.delete('/api/categories/:_id',auth, categoryCtrl.deleteCategory);
 router.put('/api/categories/:_id', auth, categoryCtrl.updateCategory);
 
-//Languages
-router.post('/api/languages/new', auth, languagesCtrl.insertLanguages);
-router.get('/api/languages', languagesCtrl.getAllLanguages);
-router.get('/api/languages/:_id', auth,languagesCtrl.getLanguage);
-router.delete('/api/languages/:_id',auth,languagesCtrl.deleteLanguages);
-router.put('/api/languages/:_id', auth,languagesCtrl.updateLanguages);
+// Sellers
+router.post('/api/sellers', auth, sellerCtrl.insertSeller);
+router.get('/api/sellers', sellerCtrl.getAllSellers);
+router.get('/api/sellers/:_id', auth, sellerCtrl.getSeller);
+router.delete('/api/sellers/:_id',auth, sellerCtrl.deleteSeller);
+router.put('/api/sellers/:_id', auth, sellerCtrl.updateSeller);
 
 module.exports = router;

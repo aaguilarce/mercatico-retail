@@ -1,0 +1,56 @@
+<div>
+  <appheader></appheader>
+  <main>
+    <div class="container">
+      <div class="form-wrapper-detailProd">
+        <div class="panel panel-primary panel-modal">
+          <div class="modal-header">
+            <h4 class="modal-title modal-text-bold">Product detail: {{detailProduct.product.name}}</h4>
+          </div>
+          <div class="panel-body">
+            <img class="img-responsive" src="{{detailProduct.product.image64}}">
+            <div class="row">
+              <div class="col-md-6 column-border">
+                <p class="modal-text-bold">Description: </p>
+                <p class="modal-text">{{detailProduct.product.description}}</p>
+              </div>
+              <div class="col-md-6 column-border">
+                <p class="modal-text-bold">Price: </p>
+                <p class="modal-text">{{listProduct.detailsProduct.price}}</p>
+              </div>
+              <div class="col-md-6 column-border">
+                <p class="modal-text-bold">Published Date: </p>
+                <p class="modal-text">{{detailProduct.product.published_date}}</p>
+              </div>
+              <div class="col-md-6 column-border">
+                <p class="modal-text-bold">Stock: </p>
+                <p class="modal-text">{{detailProduct.product.quantity}}</p>
+              </div>
+              <div class="col-md-6 column-border">
+                <p class="modal-text-bold">Category Name: </p>
+                <p class="modal-text">{{detailProduct.product.category.name}}</p>
+              </div>
+              <div class="col-md-6 column-border">
+                <p class="modal-text-bold">Category Description: </p>
+                <p class="modal-text">{{detailProduct.product.category.description}}</p>
+              </div>
+              <div class="col-md-6 column-border">
+                <p class="modal-text-bold">Seller Name: </p>
+                <p class="modal-text">{{detailProduct.product.seller.name}}</p>
+              </div>
+              <div class="col-md-6 column-border">
+                <p class="modal-text-bold">Contact Seller </p>
+                <p class="modal-text">{{detailProduct.product.seller.email}}</p>
+              </div>
+              <div class="col-md-6 column-border">
+                <p class="modal-text-bold">Seller Address: </p>
+                <p class="modal-text">{{detailProduct.product.seller.address}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <appfooter></appfooter>
+</div>

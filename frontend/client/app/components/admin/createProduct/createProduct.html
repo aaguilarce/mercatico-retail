@@ -32,9 +32,19 @@
         <div class="form-group">
           <label for="">Category:</label>
           <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle btn-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{createProduct.selectedItem}} <span class="caret"></span></button>
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li ng-repeat="category in createProduct.categories"><a role="dropdown" ng-click="createProduct.dropboxItemSelected(category)">{{category.name}}</a></li>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{createProduct.selectedItemCategory}} <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="category in createProduct.allCategories"><a role="dropdown" ng-click="createProduct.dropboxCategorySelected(category)">{{category.name}}</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="">Seller:</label>
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{createProduct.selectedItemSeller}} <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="seller in createProduct.allSellers"><a role="dropdown" ng-click="createProduct.dropboxSellerSelected(seller)">{{seller.name}}</a></li>
             </ul>
           </div>
         </div>
@@ -43,24 +53,6 @@
           <label for="price">Price $:</label>
           <input type="text" class="form-control" id="price" placeholder="Price" ng-model="createProduct.product.price" data-error="Price is required"
             required>
-          <div class="help-block with-errors"></div>
-        </div>
-
-        <!--<div class="form-group">
-          <label for="category">Category</label>
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Categories
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-              <li ng-repeat="option in create.categoriesArray" value="{{option.name}}" role="presentation"><a role="menuitem" tabindex="-1" href="#">{{option.name}}</a></li>
-            </ul>
-          </div>
-          <div class="help-block with-errors"></div>
-        </div>-->
-
-        <div class="form-group">
-          <label for="publishedDate">Seller</label>
-          <input type="text" class="form-control" id="price" placeholder="Seller" ng-model="createProduct.product.seller" data-error="Seller is required">
           <div class="help-block with-errors"></div>
         </div>
 

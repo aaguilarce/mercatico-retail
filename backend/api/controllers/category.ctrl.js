@@ -72,17 +72,23 @@ module.exports.updateCategory = (req, res) => {
     res.status(401).json({ 'message': 'UnauthorizedError: private data' });
   }
   else {
-    let category = new Category();
-
-    category.name = req.body.name;
-    category.description = req.body.description;
-
-    Category.findOneAndUpdate(req.params._id, category, (err, data) => {
+    Category.findById(req.params._id, (err, category) => {
       if (err) {
-        res.status(404).json({ 'message': 'Not Found' });
+        res.send(err);
       }
       else {
-        res.status(200).json(data);
+        category.name = req.body.name;
+        category.description = req.body.description;
+
+        category.save((err, data) => {
+          if (err) {
+            console.log(err);
+            res.status(404).json({ 'message': 'Not Found' });
+          }
+          else {
+            res.status(200).json(data);
+          }
+        });
       }
     });
   }

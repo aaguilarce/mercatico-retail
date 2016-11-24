@@ -9,22 +9,33 @@ import uiRouter from 'angular-ui-router';
 // Import visiter components
 import {home} from './components/visiter/home/home';
 import {auth} from './components/visiter/auth/auth';
-import {viewbook} from './components/visiter/viewbook/viewbook';
+import {detailProduct} from './components/visiter/detailProduct/detailProduct';
 import {cart} from './components/visiter/cart/cart';
+import {searchResult} from './components/visiter/searchResult/searchResult';
 
 // Import commom components
 import {cardProductAdmin} from './components/common/cardProductAdmin/cardProductAdmin';
+import {cardProduct} from './components/common/cardProduct/cardProduct';
 import {header} from './components/common/header/header';
 import {footer} from './components/common/footer/footer';
 
 // Import admin components
 import {dashboard} from './components/admin/dashboard/dashboard';
+import {listUser} from './components/admin/listUser/listUser';
+
 import {createProduct} from './components/admin/createProduct/createProduct';
 import {listProduct} from './components/admin/listProduct/listProduct';
 import {editProduct} from './components/admin/editProduct/editProduct';
+
 import {createCategory} from './components/admin/createCategory/createCategory';
 import {listCategory} from './components/admin/listCategory/listCategory';
-import {listUser} from './components/admin/listUser/listUser';
+import {editCategory} from './components/admin/editCategory/editCategory';
+
+import {createSeller} from './components/admin/createSeller/createSeller';
+import {listSeller} from './components/admin/listSeller/listSeller';
+import {editSeller} from './components/admin/editSeller/editSeller';
+
+import {listProductSeller} from './components/admin/listProductSeller/listProductSeller';
 
 // Import factories
 import {shared} from './shared/shared';
@@ -44,7 +55,7 @@ angular.module('app', [
   common.name,
   home.name,
   auth.name,
-  viewbook.name,
+  detailProduct.name,
   cart.name,
   cardProductAdmin.name,
   header.name,
@@ -55,6 +66,13 @@ angular.module('app', [
   editProduct.name,
   createCategory.name,
   listCategory.name,
-  listUser.name
+  editCategory.name,
+  listUser.name,
+  createSeller.name,
+  listSeller.name,
+  editSeller.name,
+  listProductSeller.name,
+  cardProduct.name,
+  searchResult.name
 ])
 .directive('app', appDirective);

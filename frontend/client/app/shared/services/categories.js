@@ -11,7 +11,7 @@ const categories = (Authentication, API, $http, $q) => {
   };
 
   const getOne = (id, Authentication) => {
-    const category = _.find(allCategories, { id });
+    const category = _.find(allCategories, (category) => { return category._id == id; });
 
     if (category) {
         return $q.when(category);
@@ -52,7 +52,7 @@ const categories = (Authentication, API, $http, $q) => {
   };
 
   const updateCategory = (category, Authentication) => {
-    return $http.put(`${API.url}/api/categories/${category._id}`, { name: category.name }, {
+    return $http.put(`${API.url}/api/categories/${category._id}`, category, {
       headers: {
         Authorization: 'Bearer ' + Authentication.getToken()
       }

@@ -1,36 +1,58 @@
 'use strict';
 
 class EditProductController {
-  constructor(Categories, Products, Authentication, $state, $stateParams) {
+  constructor(Categories, Sellers, Products, Authentication, $state, $stateParams) {
     var vm = this;
-
     let today = new Date();
-
-    vm.Categories = Categories;
-    vm.Products = Products;
-
-    vm.imageRaw = '';
-
-    vm.categories = this.getCategories();
-    //console.log(vm.categories);
-		//vm.selectedItem = vm.categories[0].name;
-
-		vm.dropboxItemSelected = (item) => {
-			vm.selectedItem = item.name;
-		};
 
     vm.product = {};
 
-    this.Products.getOne($stateParams.productId).then((data) => {
-      vm.product = data;
-      console.log("product to edit", vm.product);
+    vm.Categories = Categories;
+    vm.Products = Products;
+    vm.Sellers = Sellers;
+
+    vm.allCategories = [];
+    vm.allSellers = []
+
+    vm.imageRaw = {};
+    vm.categorySelected = {};
+    vm.sellerSelected = {};
+
+    vm.selectedItemCategory = '';
+    vm.selectedItemSeller = '';
+
+    this.Categories.get().then(() => {
+      vm.allCategories = this.Categories.getState();
+
+      vm.dropboxCategorySelected = (item) => {
+        vm.selectedItemCategory = item.name;
+        vm.product.category = item;
+      };
     });
 
-    vm.onSubmit = function () {
+    this.Sellers.get().then(() => {
+      vm.allSellers = this.Sellers.getState();
+
+      vm.dropboxSellerSelected = (item) => {
+        vm.selectedItemSeller = item.name;
+        vm.product.seller = item;
+      };
+    });
+
+    this.Products.getOne($stateParams.productId).then((data) => {
+      vm.product = data;
+      vm.categorySelected = vm.product.category;
+      vm.sellerSelected = vm.product.seller;
+
+      vm.selectedItemCategory = vm.categorySelected.name;
+      vm.selectedItemSeller = vm.sellerSelected.name;
+    });
+
+    vm.onSubmit = () => {
       if (angular.equals(vm.imageRaw, {})) { // use the same image
-        console.log("entro en el equals");
         vm.Products.updateProduct(vm.product, Authentication).then((resp) => {
-          $('#dialogForm').on('hidden.bs.modal', function () {
+          vm.product = {};
+          $('#dialogForm').on('hidden.bs.modal', () => {
             $state.go('dashboard.list-product');
           });
           $('#dialogForm').modal();
@@ -38,10 +60,9 @@ class EditProductController {
       }
       else { //save new image
         this.Products.imgToBase64(vm.imageRaw).then((resp) => {
-          console.log("entro en el else");
           vm.product.image64 = resp;
           vm.Products.updateProduct(vm.product, Authentication).then((resp) => {
-            $('#dialogForm').on('hidden.bs.modal', function () {
+            $('#dialogForm').on('hidden.bs.modal', () => {
               $state.go('dashboard.list-product');
             });
             $('#dialogForm').modal();
@@ -53,11 +74,17 @@ class EditProductController {
 
   getCategories() {
 	  this.Categories.get().then(() => {
-      this.categories = this.Categories.getState();
+      this.allCategories = this.Categories.getState();
+    });
+  }
+
+  getSellers() {
+	  this.Sellers.get().then(() => {
+      this.allSellers = this.Sellers.getState();
     });
   }
 }
 
-EditProductController.$inject = ['Categories','Products', 'Authentication', '$state', '$stateParams'];
+EditProductController.$inject = ['Categories', 'Sellers', 'Products', 'Authentication', '$state', '$stateParams'];
 
 export {EditProductController};

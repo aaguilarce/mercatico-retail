@@ -11,7 +11,6 @@ const products = (Authentication, API, $http, $q) => {
   };
 
   const getOne = (id) => {
-    console.log("id en el server es", id);
     const product = _.find(allProducts, (product) => { return product._id == id; });
 
     if (product) {

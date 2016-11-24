@@ -10,11 +10,11 @@ class ListCategoryController {
 
     vm.allCategories = this.getCategories();
 
-    vm.updateCategory = (id) => {
-      $state.go('updateCategory', {categoryId: id});
+    vm.editcategory = (id) => {
+      $state.go('dashboard.edit-category', { categoryId: id });
     }
 
-    vm.removeCategory = (id) => {
+    vm.removecategory = (id) => {
       vm.Categories.deleteCategory(id, Authentication);
     }
   }

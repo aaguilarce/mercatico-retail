@@ -142,3 +142,16 @@
     padding-left: 225px;
   }
 }
+
+@media(max-width:990px) {
+  .wrapper-sidebar {
+    margin-top: 43px;
+  }
+}
+
+@media(max-width:768px) {
+  .wrapper-sidebar {
+    margin-top: 0;
+  }
+}
+

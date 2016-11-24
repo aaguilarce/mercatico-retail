@@ -2,10 +2,13 @@
 
 class ListProductController {
 
-  constructor(Products, Authentication, $state) {
+  constructor(Products, Categories, Sellers, Authentication, $state) {
     var vm = this;
 
     vm.Products = Products;
+    vm.Categories = Categories;
+    vm.Sellers = Sellers;
+    vm.Authentication = Authentication;
 
     vm.allProducts = this.getProducts();
     vm.detailsProduct = {};
@@ -25,6 +28,10 @@ class ListProductController {
       vm.Products.deleteProduct(id, Authentication);
       vm.getProducts();
     }
+
+    vm.showproducts = (id) => {
+      $state.go('dashboard.list-product-seller', { sellerId: id });
+    }
   }
 
   getProducts() {
@@ -34,6 +41,6 @@ class ListProductController {
   }
 }
 
-ListProductController.$inject = ['Products', 'Authentication','$state'];
+ListProductController.$inject = ['Products', 'Categories', 'Sellers', 'Authentication','$state'];
 
 export {ListProductController};
