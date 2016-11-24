@@ -65,4 +65,3 @@ function getAllUsers(req, res){
 };
 
 module.exports = {register,login,getAllUsers};
-

@@ -25,8 +25,17 @@ var userSchema = new Schema({
 });
 
 userSchema.methods.setPassword = (password) => {
+  console.log('entro');
   this.salt = crypto.randomBytes(16).toString('hex');
   this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
+
+  crypto.pbkdf2(password, this.salt, 1000, 64, function(err, encodedPassword) {
+    if (err) return next(err);
+    this.hash = new Buffer(encodedPassword, 'binary').toString('base64');
+    user.save(function(err, user) {
+        if (err) return next(err);
+    });      //res.json({ _id: user._id, username: user.username, email: user.email }, 200);
+  });
 };
 
 userSchema.methods.validPassword = (password) => {

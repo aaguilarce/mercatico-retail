@@ -12,7 +12,7 @@ class DetailProductController {
       vm.product = data;
     });
 
-    vm.addcart() {
+    vm.addcart = () => {
 
     }
   }

@@ -24,6 +24,7 @@ class AuthController {
             .success((data) => {
               vm.user = data;
               vm.isError = false;
+              console.log('entro auth controller ', vm.user);
 
               if (vm.user.type === 'admin') {
                 $state.go('dashboard');
